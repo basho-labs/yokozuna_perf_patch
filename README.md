@@ -16,7 +16,7 @@ export PATH
 
 ```
 mkdir -p ebin
-erlc -pa src/ -I include/ -o ebin/ src/yz_solr.erl
+erlc -pa src/ -I include/ -o ebin/ src/*.erl
 cp ebin/*.beam /usr/lib64/riak/lib/basho-patches/
 ```
 
