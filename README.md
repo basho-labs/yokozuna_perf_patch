@@ -1,23 +1,17 @@
 # yokozuna_perf_patch
 Set of Yokozuna changes to improve bulk load performance.
 
-## CentOS + Riak 2.0.4 Installation
-
-#### Download and Configure
+## Patch Riak
 
 ```
-git clone https://github.com/basho-labs/yokozuna_perf_patch.git
-cd yokozuna_perf_patch
-PATH=$PATH:/usr/lib64/riak/erts-5.10.3/bin
-export PATH
+cp ebin/*.beam /usr/lib64/riak/lib/basho-patches/
 ```
 
-#### Compile Patch and Move to `basho-patches`
+### For testing, compilation of this project can be done like so
 
 ```
 mkdir -p ebin
 erlc -pa src/ -I include/ -o ebin/ src/*.erl
-cp ebin/*.beam /usr/lib64/riak/lib/basho-patches/
 ```
 
 ## List of changes
